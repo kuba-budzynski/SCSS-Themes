@@ -1,0 +1,128 @@
+@import "utils";
+
+$navWidth: 60vw;
+$logoSize: 6rem;
+$titleFontSize: 3rem;
+$toggleWidth: 6rem;
+
+@mixin  gradient(){
+    background: #a8ff78;
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+    background: linear-gradient(to right, #78ffd6, #a8ff78);
+}
+
+nav{
+    @include themed(){
+        background-color: t('navbar');
+    }
+    width: 100%;
+    min-height: 2rem;   
+    margin: 0 auto;
+
+    section{
+        max-width: $navWidth;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        padding: 1rem 2rem;
+        @include themed(){
+            @include borderOneSize(bottom, t('text'), 1px);
+        }
+    }
+}
+
+.logotype{
+    display: flex;
+    flex-direction: row;
+    @include space-x(3rem);
+    img{
+        width: $logoSize;
+        height: $logoSize;
+    }
+    h1{
+        @include themed(){
+            color: t('text');
+        };
+        font-size: $titleFontSize;
+        font-weight: 700;
+        align-self: center;
+        font-family: 'Orbitron', sans-serif;
+    }
+}
+
+[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.toggle{
+    label{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    span{
+        position: relative;
+        width: $toggleWidth;
+        height: $toggleWidth * 0.5;
+        border-radius: $toggleWidth * 0.25;
+        box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+        @include themed(){
+            background-color: lighten(t('background'), 15%);
+        }
+        transition: all 0.3s;
+
+        &::before, &::after{
+            content: "";
+            position: absolute;
+        }
+
+        &::before{
+            left: 1px;
+            top: 1px;
+            width: $toggleWidth * 0.5;
+            height: $toggleWidth * 0.5;
+            background-color: white;
+            border-radius: 50%;
+            z-index: 1;
+            transition: transform 0.3s;
+        }
+
+        &::after{
+            top: 50%;
+            right: $toggleWidth * 0.125;
+            width: $toggleWidth * 0.25;
+            height: $toggleWidth * 0.25;
+            transform: translateY(-50%);
+            background: url('../images/sun.svg');
+            background-size: $toggleWidth * 0.25, $toggleWidth * 0.25;
+        }
+    }
+
+    input{
+        &:checked + label span{
+            
+            @include gradient();
+
+            &::before{
+                transform: translateX($toggleWidth * 0.5);
+            }
+
+            &::after{
+                top: 50%;
+                left: $toggleWidth * 0.125;
+                width: $toggleWidth * 0.25;
+                height: $toggleWidth * 0.25;
+                background: url('../images/clouds.svg');
+                background-size: $toggleWidth * 0.25, $toggleWidth * 0.25;
+                
+            }
+
+        }
+    }
+
+}

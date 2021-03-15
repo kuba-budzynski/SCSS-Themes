@@ -1,0 +1,63 @@
+@import "themes/_light_stylesheet";
+@import "themes/_dark_stylesheet";
+
+$themes: (
+    light: (
+        navbar: $light_navbar,
+        background: $light_background,
+        accent: $light_accent,
+        text: $light_text
+    ),
+    dark: (
+        navbar: $dark_navbar,
+        background: $dark_background,
+        accent: $dark_accent,
+        text: $dark_text
+    )
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+      .theme--#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+@function t($key) {
+    @return map-get($theme-map, $key);
+}
+
+@mixin space-x($space){
+    *{
+        margin: 0 $space/2;
+    }
+    :first-child{
+        margin-left: 0;
+    }
+    :last-child{
+        margin-right: 0;
+    }
+}
+
+@mixin space-y($space){
+    *{
+        margin: $space/2 0 ;
+    }
+    :first-child{
+        margin-top: 0;
+    }
+    :last-child{
+        margin-bottom: 0;
+    }
+}
+
+@mixin borderOneSize($side, $color, $width, $type: solid) {
+    border-#{$side}: $color $width $type; 
+}
