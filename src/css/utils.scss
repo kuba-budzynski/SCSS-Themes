@@ -6,13 +6,13 @@ $themes: (
         navbar: $light_navbar,
         background: $light_background,
         accent: $light_accent,
-        text: $light_text
+        text: $light_text,
     ),
     dark: (
         navbar: $dark_navbar,
         background: $dark_background,
         accent: $dark_accent,
-        text: $dark_text
+        text: $dark_text,
     )
 );
 

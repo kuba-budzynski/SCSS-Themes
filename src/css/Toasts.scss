@@ -1,0 +1,127 @@
+@import "utils";
+
+$max_width: 75vw;
+$button_width: 10rem;
+$toast_offset: 5rem;
+$toas_min_width: 8rem;
+
+$green: #34D399;
+$blue: #6366F1;
+$red: #F43F5E;
+
+.toasts{
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include themed(){
+        background-color: t('navbar');
+    }
+}
+
+.toast_container{
+    width: 100%;
+    max-width: $max_width;
+    margin: 0 auto;
+    padding: 8rem 0;
+    @include themed(){
+        @include borderOneSize(top, t('text'), 1px);
+        @include borderOneSize(bottom, t('text'), 1px);
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+%button{
+    box-sizing: content-box;  
+    padding: 1.25rem 4rem;
+    background-color: white;
+    max-width: $toas_min_width * 2;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: $button_width * 0.15;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    outline: none;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.button-green{
+    @extend %button;
+    background-color: $green;
+    &:hover{
+        background-color: darken($green, 10%);
+    }
+}
+
+.button-red{
+    @extend %button;
+    background-color: $red;
+    &:hover{
+        background-color: darken($red, 10%);
+    }
+}
+
+.button-blue{
+    @extend %button;
+    background-color: $blue;
+    &:hover{
+        background-color: darken($blue, 10%);
+    }
+}
+
+.toasts-container {
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	z-index: 10000;
+}
+
+%toast {
+	position: relative;
+    opacity: 0;
+    transform: translateY($toast_offset);
+	margin-bottom: 0.75rem;
+	%__wrap {
+		color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+		min-width: $toas_min_width;
+        padding: 2rem $toas_min_width;
+        border-radius: 1rem;
+	}
+}
+
+.toast-green{
+    @extend %toast;
+    &__wrap {
+        @extend %__wrap;
+		background: $green;
+	}
+}
+
+.toast-red{
+    @extend %toast;
+    &__wrap {
+        @extend %__wrap;
+		background: $red;
+	}
+}
+
+.toast-blue{
+    @extend %toast;
+    &__wrap {
+        @extend %__wrap;
+		background: $blue;
+	}
+}

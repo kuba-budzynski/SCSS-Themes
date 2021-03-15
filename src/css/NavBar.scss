@@ -75,23 +75,20 @@ nav{
             background-color: lighten(t('background'), 15%);
         }
         transition: all 0.3s;
-
         &::before, &::after{
             content: "";
             position: absolute;
         }
-
         &::before{
             left: 1px;
             top: 1px;
             width: $toggleWidth * 0.5;
             height: $toggleWidth * 0.5;
-            background-color: white;
+            background-color: #F5F5F4;
             border-radius: 50%;
             z-index: 1;
             transition: transform 0.3s;
         }
-
         &::after{
             top: 50%;
             right: $toggleWidth * 0.125;
@@ -104,14 +101,11 @@ nav{
     }
 
     input{
-        &:checked + label span{
-            
+        &:checked + label span{           
             @include gradient();
-
             &::before{
                 transform: translateX($toggleWidth * 0.5);
             }
-
             &::after{
                 top: 50%;
                 left: $toggleWidth * 0.125;
@@ -121,8 +115,6 @@ nav{
                 background-size: $toggleWidth * 0.25, $toggleWidth * 0.25;
                 
             }
-
         }
     }
-
 }

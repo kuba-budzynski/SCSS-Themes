@@ -5,7 +5,6 @@
 
 $scrollbarColor: $dark_accent;
 $scrollbarWidth: 0.9rem;
-
 $background: #282c34;
 
 @include scrollbar($scrollbarColor, $scrollbarWidth);
