@@ -1,25 +1,37 @@
 @import "utils";
 
+@mixin header(){
+    @include themed(){
+        color: t('text');
+    };
+    font-size: 3rem;
+    font-weight: 700;
+    align-self: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .planets {
     @include themed() {
         @include borderOneSize(top, t('text'), 1px);
+        @include borderOneSize(bottom, t('text'), 1px);
         background-color: t('navbar');
         color: t('text');
     }
-    margin-top: 5rem;
+    h2{
+        @include header;
+    }
 }
 
 .planets-list {
     display: flex;
     flex-wrap: wrap;
-    padding: 3rem;
-    @include themed() {
-        @include borderOneSize(bottom, t('text'), 1px);
-        color: t('text');
-    }
+    padding: 2rem;
+    max-width: 80vw;
+    margin: 0 auto;
 
     li {
         display: flex;
+        margin: 2rem 0;
         flex-direction: column;
         @include grid-column-item(1);
     }
@@ -38,6 +50,18 @@
         -webkit-transform: scale(1.1);
         -moz-transform: scale(1.1);
     }
+
+    @include breakpoint(3xl) {
+		li {
+            @include grid-column-item(6);
+        }
+	}
+
+    @include breakpoint(2xl) {
+		li {
+            @include grid-column-item(5);
+        }
+	}
 
     @include breakpoint(xl) {
 		li {
@@ -76,10 +100,11 @@
 .modal {
     width: 70%;
     height: 70%;
-    padding: 20px;
+    padding: 1rem;
     position: relative;
     top: 50%;
     left: 50%;
+    border-radius: 3rem;
     transform: translate(-50%, -50%);
     @include themed() {
         background-color: t('navbar');
@@ -89,17 +114,28 @@
     flex-direction: column;
     justify-content: center;
 
+    h2{
+        @include header();
+    }
+
     img {
-        max-width: 200px;
+        max-width: 300px;
         margin: auto;
     }
 
     button {
         margin: auto;
         background: none;
+        padding: 0.5rem 3rem;
+        font-size: 1.5rem;
         @include themed() {
             color: t('text');
         }
         outline: none;
+    }
+
+    p{
+        max-width: 75%;
+        margin: 0 auto;
     }
 }

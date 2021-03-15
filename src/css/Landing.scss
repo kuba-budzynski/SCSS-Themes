@@ -1,0 +1,111 @@
+@import "utils";
+
+.landingDiv{
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    @include themed(){
+        background-color: t('background');
+        color: t('text');
+    }
+}
+
+.infoDiv{
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    @include themed(){
+        background-color: t('background');
+        color: t('text');
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0 auto;
+    @include breakpoint(3xl){
+        max-width: 65vw;
+        flex-direction: row;
+        @include space-x(3rem);
+    }
+    @include breakpoint(2xl){
+        max-width: 70vw;
+        flex-direction: row;
+        @include space-x(3rem);
+    }
+    @include breakpoint(xl){
+        max-width: 80vw;
+        flex-direction: row;
+        @include space-x(3rem);
+    }
+    @include breakpoint(l){
+        max-width: 100vw;
+        max-width: 100%;
+        flex-direction: column-reverse;
+    }
+    @include space-x(3rem);
+}
+
+.fraction{
+    width: 50%;
+    height: 100%;
+}
+
+.headings{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include themed(){
+        color: t('text');
+    }
+    h1{
+        font-size: 3.5rem;
+    }
+    h3{
+        font-size: 1.75rem;
+        font-style: italic;
+        padding: 0.5rem 0;
+        @include themed(){
+            color: t('accent');
+        }
+    }
+    p{
+        margin-top: 1rem;
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+}
+
+.heroImage{
+    width: 90%;
+    height: 90%;
+    padding: 3rem;
+}
+
+.heroImage2{
+    width: 75%;
+    height: 75%;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}

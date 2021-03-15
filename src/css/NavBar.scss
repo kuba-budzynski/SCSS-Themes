@@ -18,7 +18,9 @@ nav{
     width: 100%;
     min-height: 2rem;   
     margin: 0 auto;
-
+    position: fixed;
+    top: 0;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
     section{
         max-width: $navWidth;
         margin: 0 auto;
@@ -42,10 +44,13 @@ nav{
 .logotype{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     @include space-x(3rem);
     img{
         width: $logoSize;
         height: $logoSize;
+        margin: 0 auto;
     }
     h1{
         @include themed(){

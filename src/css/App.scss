@@ -1,16 +1,54 @@
 @import "reset";
-@import "_scrollbar";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
 @import "utils";
 
-$scrollbarColor: $dark_accent;
+@mixin shadow($aplha, $inset) {
+  -webkit-box-shadow: inset 0 0 $inset rgba(0,0,0,$aplha); 
+}
+
+$scrollbarColor: red;
 $scrollbarWidth: 0.9rem;
 $background: #282c34;
-
-@include scrollbar($scrollbarColor, $scrollbarWidth);
 
 .App {
   text-align: center;
   min-height: 100vh;
-  background-color: $background;
+  background-color: red;
+}
+
+.scrollbar-light{
+  &::-webkit-scrollbar {
+    width: $scrollbarWidth;
+  }
+
+  &::-webkit-scrollbar-track {
+      @include shadow(0.3, 6px);  
+      background-color: white; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: $light_accent;
+  }
+}
+
+.scrollbar-dark{
+  &::-webkit-scrollbar {
+    width: $scrollbarWidth;
+  }
+
+  &::-webkit-scrollbar-track {
+      @include shadow(0.3, 6px);  
+      background-color: white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $dark_accent;
+  }
+}
+
+.AppContainer{
+  @include themed(){
+      background-color: t('background');
+      color: t('text');
+  } 
 }

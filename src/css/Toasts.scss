@@ -18,6 +18,8 @@ $red: #F43F5E;
     align-items: center;
     @include themed(){
         background-color: t('navbar');
+        @include borderOneSize(top, t('text'), 1px);
+        @include borderOneSize(bottom, t('text'), 1px);
     }
 }
 
@@ -26,10 +28,6 @@ $red: #F43F5E;
     max-width: $max_width;
     margin: 0 auto;
     padding: 8rem 0;
-    @include themed(){
-        @include borderOneSize(top, t('text'), 1px);
-        @include borderOneSize(bottom, t('text'), 1px);
-    }
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -82,7 +80,7 @@ $red: #F43F5E;
 
 .toasts-container {
 	position: fixed;
-	top: 2rem;
+	top: 8.5rem;
 	right: 2rem;
 	display: flex;
 	flex-direction: column;
