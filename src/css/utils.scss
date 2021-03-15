@@ -61,3 +61,22 @@ $themes: (
 @mixin borderOneSize($side, $color, $width, $type: solid) {
     border-#{$side}: $color $width $type; 
 }
+
+@mixin breakpoint($size) {
+    @if $size == xl {
+        @media (min-width: 900px) { @content ; }
+     }
+    @else if $size == l {
+      @media (max-width: 900px) { @content ; }
+   }
+    @else if $size == m {
+      @media (max-width: 700px) { @content ; }
+   }
+     @else if $size == s {
+      @media (max-width: 300px) { @content ; }
+   }
+ }
+
+ @mixin grid-column-item($n) {
+    width: 100% / $n;
+}

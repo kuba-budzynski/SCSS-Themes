@@ -32,6 +32,10 @@ nav{
         @include themed(){
             @include borderOneSize(bottom, t('text'), 1px);
         }
+
+        @include breakpoint(m) {
+            flex-direction: column;
+        }
     }
 }
 
@@ -52,6 +56,10 @@ nav{
         align-self: center;
         font-family: 'Orbitron', sans-serif;
     }
+
+    @include breakpoint(m) {
+        flex-direction: column;
+	}
 }
 
 [type="checkbox"] {
