@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/kuba-budzynski.github.io/scss-themes/static/css/main.779d9f38.chunk.css",
+    "main.js": "/kuba-budzynski.github.io/scss-themes/static/js/main.74527478.chunk.js",
+    "main.js.map": "/kuba-budzynski.github.io/scss-themes/static/js/main.74527478.chunk.js.map",
+    "runtime-main.js": "/kuba-budzynski.github.io/scss-themes/static/js/runtime-main.81aa8cea.js",
+    "runtime-main.js.map": "/kuba-budzynski.github.io/scss-themes/static/js/runtime-main.81aa8cea.js.map",
+    "static/js/2.d510a3c4.chunk.js": "/kuba-budzynski.github.io/scss-themes/static/js/2.d510a3c4.chunk.js",
+    "static/js/2.d510a3c4.chunk.js.map": "/kuba-budzynski.github.io/scss-themes/static/js/2.d510a3c4.chunk.js.map",
+    "index.html": "/kuba-budzynski.github.io/scss-themes/index.html",
+    "static/css/main.779d9f38.chunk.css.map": "/kuba-budzynski.github.io/scss-themes/static/css/main.779d9f38.chunk.css.map",
+    "static/js/2.d510a3c4.chunk.js.LICENSE.txt": "/kuba-budzynski.github.io/scss-themes/static/js/2.d510a3c4.chunk.js.LICENSE.txt",
+    "static/media/NavBar.scss": "/kuba-budzynski.github.io/scss-themes/static/media/sun.b5368efe.svg",
+    "static/media/earth.0f55f10c.png": "/kuba-budzynski.github.io/scss-themes/static/media/earth.0f55f10c.png",
+    "static/media/earth.a5a9895b.svg": "/kuba-budzynski.github.io/scss-themes/static/media/earth.a5a9895b.svg",
+    "static/media/jupiter.546d06a2.png": "/kuba-budzynski.github.io/scss-themes/static/media/jupiter.546d06a2.png",
+    "static/media/landing.228fbf25.svg": "/kuba-budzynski.github.io/scss-themes/static/media/landing.228fbf25.svg",
+    "static/media/mars.2e95bd6c.png": "/kuba-budzynski.github.io/scss-themes/static/media/mars.2e95bd6c.png",
+    "static/media/mercury.8ff38b32.png": "/kuba-budzynski.github.io/scss-themes/static/media/mercury.8ff38b32.png",
+    "static/media/neptune.fad3ccac.png": "/kuba-budzynski.github.io/scss-themes/static/media/neptune.fad3ccac.png",
+    "static/media/rocket.45963100.svg": "/kuba-budzynski.github.io/scss-themes/static/media/rocket.45963100.svg",
+    "static/media/saturn.801f93af.png": "/kuba-budzynski.github.io/scss-themes/static/media/saturn.801f93af.png",
+    "static/media/uran.a13348f9.png": "/kuba-budzynski.github.io/scss-themes/static/media/uran.a13348f9.png",
+    "static/media/venus.d21ed132.png": "/kuba-budzynski.github.io/scss-themes/static/media/venus.d21ed132.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81aa8cea.js",
+    "static/js/2.d510a3c4.chunk.js",
+    "static/css/main.779d9f38.chunk.css",
+    "static/js/main.74527478.chunk.js"
+  ]
+}
